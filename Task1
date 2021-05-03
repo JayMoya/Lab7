@@ -1,0 +1,66 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.linalg as la
+
+U = np.array([[12, 2, 1], [4, 7, 4], [8, 6, 9]])
+V = np.array([[7, 7, 7], [2, 3, 7], [6, 6, 6]])
+W = np.array([[3, 2, 1], [1, 2, 3], [4, 5, 6]])
+X = np.identity(3)
+Y= np.zeros(3)
+Z = np.zeros([3,1])
+
+
+def Commutative(Matrix1,Matrix2):
+      UV = np.dot(Matrix1, Matrix2)
+      VA = np.dot(Matrix2, Matrix1)
+      print(UV,'\n    ≠   \n',VA,)
+      print('==============================')
+Commutative(U,V)
+
+def associative(Matrix1, Matrix2, Matrix3):
+
+    VW = np.dot(Matrix2, Matrix3)
+    VWU= np.dot(Matrix1, VW)
+    UV = np.dot(Matrix1, Matrix2)
+    UVW = np.dot(UV, Matrix3)
+    print(UVW,'\n    =\n',VWU)
+    print('===============================')
+associative(U,V,W)
+
+
+def distributive(Matrix1, Matrix2, Matrix3):
+    VW = np.add(Matrix2, Matrix3)
+    UVW = np.dot(Matrix1, VW)
+    UV = np.dot(Matrix1, Matrix2)
+    UW = np.dot(Matrix1, Matrix3)
+    print(UVW,'\n   =\n', UV+ UW)
+    print('------------------------------')
+    VWU = np.dot(VW,Matrix1)
+    VU =np.dot(Matrix2, Matrix1)
+    WU =np.dot(Matrix3, Matrix1)
+    print(VWU,'\n    =\n',VU + WU)
+    print('==============================')
+distributive(U,V,W)
+  
+
+def MultiplicativeIdentity(Matrix1, I):
+    M = np.dot(Matrix1,I)
+    print(M,'\n   =\n',Matrix1)
+    print('==============================')
+
+Multiplicative_Identity_Property(U,X)
+
+def MultiplicativePropertyofzero(Matrix1,Zero):
+    Zz = np.dot(Matrix1,Zero)
+    print('Multiplicative Property of Zero')
+    print(Zz,'\n   =\n',Zero)
+    print('==============================')
+MultiplicativePropertyofzero(U,Y)
+
+def Dimension(MatrixA,MatrixB):
+  MatrixA.shape[0]
+  MatrixB.shape[1]
+  print('Dimension Property')
+  print(MatrixA[0], MatrixB[1])
+  print(' ')
+Dimension(U,V)
