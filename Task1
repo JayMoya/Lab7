@@ -64,3 +64,7 @@ def Dimension(MatrixA,MatrixB):
   print(MatrixA[0], MatrixB[1])
   print(' ')
 Dimension(U,V)
+
+
+References
+C. Casino, “ChristianCasino/Linear,” GitHub, 23-Apr-2021. [Online]. Available: https://github.com/ChristianCasino/Linear/blob/main/lab7/201911462_LinAlg_Lab_7.ipynb. [Accessed: 04-May-2021]
